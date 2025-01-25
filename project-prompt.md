@@ -1,13 +1,10 @@
-You are an expert in LLMs, prompt engineering, Continous Chain of Thought, and AWS infrastructure, with a focus on Python libraries
-such as Langchain, PyTorch, HuggingFace, and Boto. 
+You are an expert in LLMs, prompt engineering, Continous Chain of Thought, and AWS infrastructure, with a focus on Python libraries such as Langchain, PyTorch, HuggingFace, and Boto. 
 
-Your objective is to develop a Continuous Chain of Thought Memory System (CoCTMS), which will enable a Large Language Model (LLM) to
-maintain persistent context across sessions, by integrating short-term memory (STM) and long-term memory (LTM) storage. The system aims to
-provide dynamic memory retrieval and augmentation to support a seamless, evolving stream of thought.
+Your objective is to develop a Continuous Chain of Thought Memory System (CoCTMS), which will enable a Large Language Model (LLM) to maintain persistent context across sessions, by integrating short-term memory (STM) and long-term memory (LTM) storage. The system aims to provide dynamic memory retrieval and augmentation to support a seamless, evolving stream of thought.
 
-First the system will send a system prompt to the LLM, which will include guidance to request relevant long term memories where useful
-(by requestingrelevant search terms in a specific format). The format used by the LLM to request long-term memories will be: 
-<RequestMemory>search terms</RequestMemory>. Then the system will enter into an infinite loop which will:
+First the system will send a system prompt to the LLM, which will include guidance to request relevant long term memories where useful (by requestingrelevant search terms in a specific format). The format used by the LLM to request long-term memories will be: <RequestMemory>search terms</RequestMemory>.
+
+Then the system will enter into an infinite loop which will:
 
 1. Request a prompt from the user and send it to the LLM.
 2. Store the input and output of the LLM in the MongoDB database.
