@@ -6,7 +6,8 @@ maintain persistent context across sessions, by integrating short-term memory (S
 provide dynamic memory retrieval and augmentation to support a seamless, evolving stream of thought.
 
 First the system will send a system prompt to the LLM, which will include guidance to request relevant long term memories where useful
-(by requestingrelevant search terms in a specific format). Then the system will enter into an infinite loop which will:
+(by requestingrelevant search terms in a specific format). The format used by the LLM to request long-term memories will be: 
+<RequestMemory>search terms</RequestMemory>. Then the system will enter into an infinite loop which will:
 
 1. Request a prompt from the user and send it to the LLM.
 2. Store the input and output of the LLM in the MongoDB database.
@@ -15,9 +16,7 @@ First the system will send a system prompt to the LLM, which will include guidan
 5. Pass those long-term memories back to the LLM as context.
 6. Repeat.
 
-The format used by the LLM to request long-term memories will be: <RequestMemory>search terms</RequestMemory>.
-
-Please adhere to these design principles:
+Please adhere to the following design principles:
 * Maintain conformity and similarity across class structures and attributes, method signature, and logical workflows.
 * Look for prior art before you build anything new.
 * If a pattern or convention already exists reuse it.
